@@ -8,25 +8,87 @@ Click the help icon above to learn more.
     padding: 15px 25px;
 }
 */
-.main-content{
-
-}
-.content-width{
+/** FONTS**/
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono|Roboto:400,500');
+h1,h2,h3,h4,h5,h6,
+a{font-family: 'Overpass Mono'}
+body{font-family: 'Roboto'}
+.main-content{width: 100%}
+.content-width {
 	width: 100%;
 	max-width: 1240px;
 	margin: 0 auto;
 }
-.three-col{
-	display: grid;
-	grid-template-areas: "col1 col2 col3";
-	grid-column-gap: 10px;
-}
-.two-col{
-	display: grid;
-	grid-template-areas: "col1 col2";
-	grid-column-gap: 10px;
+
+.three-col, .two-col {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 
+.col {
+	flex: 1;
+}
+
+.tickets, .schedule,.sponsors {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	min-height: 500px;
+}
+
+.tickets {
+	border: 1px solid #0c905a;
+	margin-right: 10px;
+}
+
+.tickets-button {
+	background: #0c905a;
+	padding: 10px;
+	margin-right: 10px;
+}
+
+.schedule {
+	border: 1px solid #f9d44e;
+	margin-right: 10px;
+}
+
+.schedule-button {
+	background: #f9d44e;
+	padding: 10px;
+	margin-right: 10px;
+}
+
+.sponsors {
+	border: 1px solid #663399;
+	margin-right: 10px;
+}
+
+.sponsors-button {
+	background: #663399;
+	padding: 10px;
+	margin-right: 10px;
+}
+
+.sponsors-button a {
+	color: white;
+}
+
+/** SPEAKERS ROW**/
+.speakers-row {
+	background: #f9d44e;
+	padding: 50px;
+	background-image: url('https://2017.dublin.wordcamp.org/files/2017/08/small-speakers-background.png');
+	background-repeat: repeat;
+}
+/** SPONSORS ROW**/
+.sponsors-row{
+	background: #ececec;
+	padding: 50px
+}
 .site-branding-text {
 	max-width: 90%;
 	margin: auto;
@@ -86,7 +148,7 @@ Click the help icon above to learn more.
 	}
 	
 	.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media, 
-										.has-header-video:not(.twentyseventeen-front-page):not(.home) .custom-header-media {
+																.has-header-video:not(.twentyseventeen-front-page):not(.home) .custom-header-media {
 		position: relative;
 		padding: 150px 0;
 	}
@@ -102,20 +164,20 @@ Click the help icon above to learn more.
 	}
 	
 	body:not(.has-sidebar):not(.page-one-column) .page-header, 
-										body.has-sidebar.error404 #primary .page-header, 
-										body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
+																body.has-sidebar.error404 #primary .page-header, 
+																body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
 		padding-bottom: 1em;
 		width: 100%;
 		float: none;
 	}
 	
 	.blog:not(.has-sidebar) #primary article, 
-										.archive:not(.page-one-column):not(.has-sidebar) #primary article, 
-										.search:not(.has-sidebar) #primary article, 
-										.error404:not(.has-sidebar) #primary .page-content, 
-										.error404.has-sidebar #primary .page-content, 
-										body.page-two-column:not(.archive) #primary .entry-content, 
-										body.page-two-column #comments {
+																.archive:not(.page-one-column):not(.has-sidebar) #primary article, 
+																.search:not(.has-sidebar) #primary article, 
+																.error404:not(.has-sidebar) #primary .page-content, 
+																.error404.has-sidebar #primary .page-content, 
+																body.page-two-column:not(.archive) #primary .entry-content, 
+																body.page-two-column #comments {
 		width: 100%;
 		float: none;
 		padding-bottom: 2em;
@@ -1328,7 +1390,7 @@ tr:nth-child(even) {
 	}
 	
 	body.page:not(.twentyseventeen-front-page) .entry-title,
-										body.single-post article.hentry:not(.has-post-thumbnail) .entry-title {
+																body.single-post article.hentry:not(.has-post-thumbnail) .entry-title {
 		top: -180px;
 	}
 	
@@ -1368,7 +1430,7 @@ tr:nth-child(even) {
 	}
 	
 	#our-sponsors .wcorg-sponsor,
-										#our-sponsors .wcorg-sponsor:last-child {
+																#our-sponsors .wcorg-sponsor:last-child {
 		width: 100%;
 		float: none;
 		text-align: center;
@@ -1452,12 +1514,12 @@ tr:nth-child(even) {
 	}
 	
 	body.page:not(.twentyseventeen-front-page) .entry-title,
-		body.single-post article.hentry:not(.has-post-thumbnail) .entry-title {
+	body.single-post article.hentry:not(.has-post-thumbnail) .entry-title {
 		font-size: 30px;
 	}
 	
 	#speeakers-list .wcorg-speaker-description p, 
-										#speeakers-list .wcorg-speaker-description p:nth-child(2) {
+	#speeakers-list .wcorg-speaker-description p:nth-child(2) {
 		display: block;
 		text-align: left;
 	}
@@ -1469,7 +1531,7 @@ tr:nth-child(even) {
 
 @media screen and (min-width: 767px) {
 	#our-sponsors .wcorg-sponsors h2,
-										#our-sponsors .wcorg-sponsor {
+	#our-sponsors .wcorg-sponsor {
 		display: flex;
 		align-items: center;
 		height: 100px;
@@ -1478,7 +1540,7 @@ tr:nth-child(even) {
 
 @media screen and (min-width: 992px) {
 	.wcorg-speakers .wcorg-speaker:nth-child(even),
-										.wcorg-speakers .wcorg-speaker:nth-child(odd) {
+	.wcorg-speakers .wcorg-speaker:nth-child(odd) {
 		padding-left: 5em;
 	}
 }
